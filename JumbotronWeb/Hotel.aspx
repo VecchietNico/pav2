@@ -68,12 +68,14 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCuit"  CssClass="form-control" placeholder="XX-YYYYYYYY-Z"  runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ControlToValidate="txtCuit" ID="rf_cuit" runat="server" ErrorMessage="Ingrese CUIT"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>Nombre:</td>
                     <td>
                         <asp:TextBox ID="txtdescripcion"  CssClass="form-control" placeholder="Aquí el nombre del hotel"  runat="server" ></asp:TextBox>
+                        <asp:RequiredFieldValidator ControlToValidate="txtdescripcion" ID="rf_descripcion" runat="server" ErrorMessage="Ingrese Nombre"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -81,6 +83,7 @@
                         Fecha Inicio Actividades:</td>
                     <td>
                         <asp:TextBox ID="txtFechaInicioActividades" CssClass="datepicker form-control"  placeholder="Click aqui para seleccionar fecha" runat ="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ControlToValidate="txtFechaInicioActividades" ID="rf_fecha" runat="server" ErrorMessage="Ingrese Fecha"></asp:RequiredFieldValidator>
                     </td>
                     
                      <script type="text/javascript">
@@ -105,13 +108,14 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCapacidad" runat="server" CssClass="form-control" placeholder="Capacidad de pasajeros"></asp:TextBox>
+                        <asp:RequiredFieldValidator ControlToValidate="txtCapacidad" ID="rf_capacidad" runat="server" ErrorMessage="Ingrese Capacidad"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>Destino</td>
                     <td>
-                        <asp:DropDownList ID="ddlDestino"  CssClass="form-control" runat="server" Enabled="False">
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="ddlDestino"  CssClass="form-control" runat="server" Enabled="False"></asp:DropDownList>
+                        <asp:RequiredFieldValidator ControlToValidate="ddlDestino" ID="fr_destino" runat="server" ErrorMessage="Seleccione"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -123,6 +127,7 @@
                             <asp:ListItem Value="1">Sí</asp:ListItem>
                             <asp:ListItem Value="0">No</asp:ListItem>
                         </asp:RadioButtonList>
+                        <asp:RequiredFieldValidator ControlToValidate="rb_list" ID="rf_mascota" runat="server" ErrorMessage="Seleccione una opción"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

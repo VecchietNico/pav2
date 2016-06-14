@@ -13,7 +13,7 @@ using System.Configuration;
 public class GestorHotel
 {   //TODO aca instanciar la BD
     //ACÁ SE INSTANCIA LA CADENA DE CONEXIÓN, UNA ÚNICA VEZ
-    public static string CadenaConexion = ConfigurationManager.ConnectionStrings["DBNico"].ConnectionString;
+    public static string CadenaConexion = ConfigurationManager.ConnectionStrings["DBDavid"].ConnectionString;
     //public static string CadenaConexion = @"Data Source=DAVID-PC\SQLEXPRESS;Initial Catalog=PAV2;Integrated Security=True";
     //public static string CadenaConexion = "Data Source=MAQUIS;Initial Catalog=4K1_62726;User ID=avisuales2;Password=avisuales2";
 
@@ -51,7 +51,7 @@ public class GestorHotel
                 h2.descripcion = (string)dr["descripcion"];
                 h2.descripcion = dr["descripcion"].ToString();
                 h2.id = (int)dr["id"];
-                h2.cuit = (int)dr["cuit"];
+                h2.cuit = (long)dr["cuit"];
                 // esto para cada atributo que acepte valores nulos
                 if (dr["capacidad"] != DBNull.Value)
                     h2.capacidad = (int)(dr["capacidad"]);
@@ -193,11 +193,11 @@ public class GestorHotel
             cmd.Parameters.Add(new SqlParameter("@eliminado", DBNull.Value));
             cmd.Parameters.Add(new SqlParameter("@aceptaMascota", h.aceptaMascota));
             cmd.Parameters.Add(new SqlParameter("@inicioActividad", h.inicioActividad));
-            //cmd.CommandType = CommandType.Text; // es necesario setear esta propiedad el valor por defecto es  CommandType.Text
+           
             int filasAfetadas = cmd.ExecuteNonQuery();
             if (filasAfetadas == 0)
             {
-                throw new Exception("El registro ya existe en la base");
+                throw new Exception();
             }
 
         }

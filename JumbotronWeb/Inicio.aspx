@@ -8,6 +8,7 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -15,25 +16,25 @@
             <div class="item active">
                 <div class="fill" style="background-image: url('img/slide1.gif');"></div>
                 <div class="carousel-caption">
-                    <h2>Tomate El Palo</h2>
+                    <h2></h2>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image: url('img/slide2.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Gastate Todo </h2>
+                    <h2> </h2>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image: url('img/slide3.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Buscate Un Curro En Finlandia</h2>
+                    <h2></h2>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image: url('img/panorama.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Ebriate en Brasil</h2>
+                    <h2></h2>
                 </div>
             </div>
         </div>

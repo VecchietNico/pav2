@@ -136,10 +136,15 @@ public partial class Hotelwf : System.Web.UI.Page
         accion("Grabando..");
         Hotel h = new Hotel();
 
+        if (Page.IsValid)
+        {
+            mensaje("la página es válida");
+        }
+
         if (validar())
         {
             if (txtCuit.Text != "")
-                h.cuit = Convert.ToInt64(txtCuit.Text);
+                h.cuit = limpiarCUIT();
             else
                 h.cuit = -1;
 
@@ -171,6 +176,13 @@ public partial class Hotelwf : System.Web.UI.Page
     Regex Validar_numeros = new Regex(@"^[0-9]*$");
     Regex Validar_cuit = new Regex(@"^[0-9]{2}-[0-9]{8}-[0-9]$");
     
+    private long limpiarCUIT()
+    {
+        string var = "-1";
+        if (txtCuit.Text != "")
+            var = txtCuit.Text.Replace("-", "");
+        return Convert.ToInt64(var);
+    }
     private Boolean validar()
     {
 
@@ -180,13 +192,7 @@ public partial class Hotelwf : System.Web.UI.Page
             return false;
         }
 
-        string var="";
-        if(txtCuit.Text !="")
-        {
-            var = txtCuit.Text.Replace("-","");
-        }
-
-        if (txtCuit.Text == ""  || GestorHotel.existeCuit(Convert.ToInt64(var)) && grabar)
+        if (txtCuit.Text == ""  || GestorHotel.existeCuit(limpiarCUIT()) && grabar)
         {
             rechazarCuit_repetido(txtCuit.Text);
             return false;
